@@ -18,7 +18,9 @@
     const target = parseFloat(el.dataset.count);
     const decimals = parseInt(el.dataset.decimals || '0', 10);
     const suffix = el.dataset.suffix || '';
-    if (reduce) { el.textContent = target.toLocaleString(undefined, { minimumFractionDigits: decimals }) + suffix; return; }
+    const plain = el.dataset.plain !== undefined; // years etc. — no thousands separator
+    const fmt = v => plain ? (decimals ? v.toFixed(decimals) : String(Math.round(v))) : v.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+    if (reduce) { el.textContent = fmt(target) + suffix; return; }
     // preserve trailing <span> label if present
     const labelEl = el.querySelector('span');
     const label = labelEl ? labelEl.outerHTML : '';
@@ -27,7 +29,7 @@
       const p = Math.min(1, (now - start) / dur);
       const eased = 1 - Math.pow(1 - p, 3);
       const val = target * eased;
-      el.innerHTML = val.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix + (label ? ' ' + label : '');
+      el.innerHTML = fmt(val) + suffix + (label ? ' ' + label : '');
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
