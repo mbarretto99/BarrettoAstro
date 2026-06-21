@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barretto Astro — Custom Astrophotography Accessories</title>
+  <meta name="description" content="Precision-built 3D-printed astrophotography accessories, designed under real skies for real astrophotographers. Mounts, Bahtinov masks, cable organisers & custom designs. Perth, Western Australia." />
+  <meta name="theme-color" content="#080914" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Barretto Astro — Custom Astrophotography Accessories" />
+  <meta property="og:description" content="Precision-built 3D-printed astrophotography accessories. Designed under real skies for real astrophotographers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:alt" content="Barretto Astro — deep-space cosmic banner" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Barretto Astro — Custom Astrophotography Accessories" />
+  <meta name="twitter:description" content="Precision-built 3D-printed astrophotography accessories. Designed under real skies for real astrophotographers." />
+  <meta name="twitter:image" content="assets/og-image.jpg" />
+
+  <!-- Brand typeface: Calibri (with Carlito as the metric-compatible web clone) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080914'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%23F52D1C' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%2362E9FB'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Cosmic background layers -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula nebula--1" aria-hidden="true"></div>
+  <div class="nebula nebula--2" aria-hidden="true"></div>
+  <div class="nebula nebula--3" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#shop">Skip to shop</a>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#home" aria-label="Barretto Astro — home">
+        <!-- Official Barretto Astro emblem (white/reverse mark for dark backgrounds) -->
+        <img class="mono-img" src="assets/logo.svg" alt="" width="44" height="44" decoding="async" />
+        <span class="nav__wordmark"><span class="wm-light">BARRETTO</span> <span class="wm-red">ASTRO</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#custom">Custom</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn--primary nav__cta" href="https://www.etsy.com/au/shop/BarrettoAstro" target="_blank" rel="noopener">Shop on Etsy</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content reveal">
+        <div class="hero__rings" aria-hidden="true">
+          <span class="ring ring--1"></span>
+          <span class="ring ring--2"></span>
+          <span class="orbit-dot"></span>
+        </div>
+        <p class="hero__pillars">PRECISION · PASSION · DEEP SKY · ASTROPHOTOGRAPHY</p>
+        <h1 class="hero__title">
+          <span class="wm-light">BARRETTO</span>
+          <span class="wm-red">ASTRO</span>
+        </h1>
+        <p class="hero__tagline">Custom Astrophotography Accessories</p>
+        <p class="hero__sub">Precision-built 3D-printed parts, designed under real skies for real astrophotographers.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--glow" href="#shop">Explore the Shop</a>
+          <a class="btn btn--ghost" href="#custom">Custom Designs</a>
+        </div>
+        <p class="hero__meta">Perth, Western Australia · <span class="stars" aria-hidden="true">★★★★★</span> 4.9 on Etsy</p>
+      </div>
+      <a href="#shop" class="hero__scroll" aria-label="Scroll to shop">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================ SHOP ============================ -->
+    <section class="section shop" id="shop">
+      <div class="section__head reveal">
+        <p class="eyebrow">The Storefront</p>
+        <h2 class="section__title">Built for the rig you already own</h2>
+        <p class="section__lede">Every part is 3D-printed in UV-resistant ABS — durable, tough, and ready for long nights under the sky. Tap any piece to buy it on Etsy.</p>
+      </div>
+
+      <div class="filters reveal" id="filters" role="tablist" aria-label="Filter products"></div>
+
+      <div class="grid" id="productGrid" aria-live="polite"></div>
+
+      <div class="shop__strip reveal">
+        <img src="assets/header.jpg" alt="" loading="lazy" aria-hidden="true" />
+        <div class="shop__strip-overlay"></div>
+        <div class="shop__strip-content">
+          <h3>See the full range on Etsy</h3>
+          <p>New mounts, masks &amp; organisers added regularly.</p>
+          <a class="btn btn--primary btn--glow" href="https://www.etsy.com/au/shop/BarrettoAstro" target="_blank" rel="noopener">Shop all on Etsy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ GALLERY ============================ -->
+    <section class="section gallery" id="gallery">
+      <div class="section__head reveal">
+        <p class="eyebrow">Under Real Skies</p>
+        <h2 class="section__title">A gallery from the field</h2>
+        <p class="section__lede">The deep-sky images behind the designs — captured through the same gear these accessories were made for.</p>
+      </div>
+      <div class="gallery__grid reveal" id="galleryGrid"></div>
+      <p class="gallery__stat reveal" data-count="1000" data-suffix="+">1000+ <span>Hours under the stars</span></p>
+    </section>
+
+    <!-- ============================ TEASER VIDEO ============================ -->
+    <section class="teaser" aria-label="Brand video">
+      <video class="teaser__video" id="teaserVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-bg.jpg">
+        <source src="assets/generated/promo-telescope.mp4" type="video/mp4" />
+      </video>
+      <div class="teaser__overlay"></div>
+      <div class="teaser__content reveal">
+        <p class="eyebrow">Designed under real skies</p>
+        <h2 class="teaser__title">Precision, under the stars</h2>
+        <p class="teaser__sub">Every part is tested on a real rig under a real night sky — then refined until it just works.</p>
+      </div>
+      <button class="teaser__sound" id="teaserSound" type="button" aria-pressed="false" aria-label="Unmute video" title="Sound"></button>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <div class="about__visual reveal">
+          <div class="about__card">
+            <img class="mono-img mono-img--lg" src="assets/logo.svg" alt="Barretto Astro emblem — telescope, orbital rings and stars" decoding="async" />
+            <p class="about__pillars">PRECISION · PASSION · DEEP SKY</p>
+          </div>
+          <div class="about__stats">
+            <div class="stat"><span class="stat__num" data-count="68">0</span><span class="stat__label">Etsy sales</span></div>
+            <div class="stat"><span class="stat__num" data-count="4.9" data-decimals="1">0</span><span class="stat__label">Star rating</span></div>
+            <div class="stat"><span class="stat__num" data-count="2025">0</span><span class="stat__label">Selling since</span></div>
+            <div class="stat"><span class="stat__num" data-count="1000" data-suffix="+">0</span><span class="stat__label">Hours imaging</span></div>
+          </div>
+        </div>
+
+        <div class="about__copy reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section__title">Hi, I'm Mark</h2>
+          <p>I'm an astrophotographer and maker based in <strong>Perth, Western Australia</strong>. Barretto Astro began the way most good projects do — I couldn't find the exact part I needed for my own rig, so I designed and 3D-printed it myself.</p>
+          <p>Everything here is printed in <strong>ABS</strong>: tough, impact-resistant, and — crucially — <strong>UV-resistant</strong>, so it won't crack or fade after long sessions under the sun and stars. Each piece is designed by an astrophotographer, for astrophotographers.</p>
+          <!-- EDIT: personalise this line with your own story / how you got into astrophotography -->
+          <p>If you don't see your camera, scope or setup, just message me — custom sizes and one-off designs are my favourite thing to make.</p>
+          <div class="about__abs">
+            <span class="abs-chip">UV-resistant ABS</span>
+            <span class="abs-chip">Tool-free fit</span>
+            <span class="abs-chip">Designed in-house</span>
+            <span class="abs-chip">Custom sizes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials reveal">
+        <p class="eyebrow">From buyers</p>
+        <div class="t-cards" id="testimonials">
+          <figure class="t-card"><blockquote>“Excellent product, great quality, and top-notch customer service. Mark's personal touch is felt in every item he makes.”</blockquote><figcaption>— Fredrick</figcaption></figure>
+          <figure class="t-card"><blockquote>“Thank you Mark for the trip down 'Easy Street'. Item arrived quickly and was exactly as described and fit perfectly!”</blockquote><figcaption>— Joe</figcaption></figure>
+          <figure class="t-card"><blockquote>“Perfect for mounting my Mele Quieter 4c. Unlike others I looked at, this one matches the offset screws on the Mele. Great quality product.”</blockquote><figcaption>— Verified buyer</figcaption></figure>
+          <figure class="t-card"><blockquote>“Seller was communicative and open to helping me get what I needed for my telescope. Products look great and are well-priced!”</blockquote><figcaption>— Verified buyer</figcaption></figure>
+          <figure class="t-card"><blockquote>“Great seller, good communication and the product is outstanding.”</blockquote><figcaption>— Steve</figcaption></figure>
+          <figure class="t-card"><blockquote>“Simple yet great design, and perfect for the task.”</blockquote><figcaption>— Verified buyer</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CUSTOM ============================ -->
+    <section class="section custom" id="custom">
+      <div class="section__head reveal">
+        <p class="eyebrow">Custom Designs</p>
+        <h2 class="section__title">Don't see your setup? Let's design it.</h2>
+        <p class="section__lede">Custom sizes and one-off parts are what I love most. Mounts for an unusual scope, a bracket for a controller that doesn't exist yet, a visor in your colour — message me and we'll make it real.</p>
+      </div>
+
+      <ol class="process reveal">
+        <li class="process__step"><span class="process__num">1</span><h3>Message me</h3><p>Tell me your scope, camera or part and what you need it to do.</p></li>
+        <li class="process__step"><span class="process__num">2</span><h3>We design it</h3><p>I model the part to fit — sharing details and answering questions as I go.</p></li>
+        <li class="process__step"><span class="process__num">3</span><h3>3D-print in ABS</h3><p>Printed tough and UV-resistant, ready for nights under the sky.</p></li>
+        <li class="process__step"><span class="process__num">4</span><h3>Shipped to you</h3><p>Posted from Perth, WA. Cancellations accepted within 24 hours.</p></li>
+      </ol>
+
+      <div class="custom__cta reveal">
+        <h3>Got a part in mind?</h3>
+        <a class="btn btn--primary btn--glow btn--lg" href="https://www.etsy.com/au/messages/new?with_id=1032676828&referring_id=56786351&referring_type=shop&recipient_id=1032676828" target="_blank" rel="noopener">Start a custom order on Etsy</a>
+        <p class="custom__note">Or browse the <a href="#shop">shop</a> — most items can be tweaked to fit your gear.</p>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section contact" id="contact">
+      <div class="contact__grid">
+        <div class="contact__intro reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section__title">Let&rsquo;s build something</h2>
+          <p class="section__lede">A question, a custom part, or an order follow-up &mdash; send a message and I&rsquo;ll get back to you.</p>
+          <ul class="contact__alt">
+            <li><span>Email</span><a href="mailto:mark.barretto@mac.com">mark.barretto@mac.com</a></li>
+            <li><span>Etsy</span><a href="https://www.etsy.com/au/messages/new?with_id=1032676828&amp;referring_id=56786351&amp;referring_type=shop&amp;recipient_id=1032676828" target="_blank" rel="noopener">Message on Etsy &#8599;</a></li>
+            <li><span>Based</span>Perth, Western Australia</li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="field">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" name="name" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </div>
+          <div class="field field--full">
+            <label for="cTopic">Topic</label>
+            <select id="cTopic" name="topic">
+              <option>General enquiry</option>
+              <option>Custom design</option>
+              <option>Order / shipping question</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" name="message" rows="5" required placeholder="Tell me what you need&hellip;"></textarea>
+          </div>
+          <button class="btn btn--primary btn--glow" type="submit" id="contactSubmit">Send message</button>
+          <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
+          <p class="contact__fineprint">Protected against bots; your details are only used to reply to you.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__wordmark"><span class="wm-light">BARRETTO</span> <span class="wm-red">ASTRO</span></span>
+        <p class="footer__pillars">PRECISION · PASSION · DEEP SKY · ASTROPHOTOGRAPHY</p>
+        <p class="footer__loc">Perth, Western Australia · On Etsy since 2025</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#shop">Shop</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#custom">Custom Designs</a>
+        <a href="https://www.etsy.com/au/shop/BarrettoAstro" target="_blank" rel="noopener">Etsy Store</a>
+      </nav>
+    </div>
+    <p class="footer__legal">© <span id="year"></span> Barretto Astro. Designed under real skies. Products link to the BarrettoAstro Etsy store.</p>
+  </footer>
+
+  <!-- ============================ LIGHTBOX ============================ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <figure class="lightbox__figure">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/teaser.js"></script>
+  <script src="js/contact.js"></script>
+  <script>
+    // Render product grid + filters
+    (function () {
+      const grid = document.getElementById('productGrid');
+      const filtersEl = document.getElementById('filters');
+      const CATS = window.BA_CATEGORIES;
+      const PRODUCTS = window.BA_PRODUCTS;
+      let active = 'all';
+
+      function chip(c) {
+        const b = document.createElement('button');
+        b.className = 'chip' + (c.key === active ? ' chip--active' : '');
+        b.textContent = c.label;
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', c.key === active ? 'true' : 'false');
+        b.dataset.cat = c.key;
+        b.addEventListener('click', () => { active = c.key; renderFilters(); renderGrid(); });
+        return b;
+      }
+      function renderFilters() {
+        filtersEl.innerHTML = '';
+        CATS.forEach(c => filtersEl.appendChild(chip(c)));
+      }
+      function card(p) {
+        const a = document.createElement('article');
+        a.className = 'card tilt reveal';
+        a.dataset.cat = p.cat;
+        const tag = p.digital ? 'Digital download' : ({mounts:'Mount',masks:'Focusing mask',cable:'Cable mgmt',cases:'Case / cover',marine:'Marine'}[p.cat] || '');
+        a.innerHTML = `
+          <div class="card__media">
+            <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.style.opacity=.25" />
+            <span class="card__tag">${tag}</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">${p.name}</h3>
+            <p class="card__blurb">${p.blurb}</p>
+            <div class="card__foot">
+              <span class="card__price">${p.price}</span>
+              <a class="btn btn--primary btn--sm" href="${p.etsy}" target="_blank" rel="noopener">View on Etsy &#8599;</a>
+            </div>
+          </div>`;
+        return a;
+      }
+      function renderGrid() {
+        grid.innerHTML = '';
+        const list = active === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === active);
+        list.forEach(p => grid.appendChild(card(p)));
+        // re-bind reveal + tilt for new nodes
+        if (window.BA_bindReveal) window.BA_bindReveal();
+        if (window.BA_bindTilt) window.BA_bindTilt();
+      }
+      renderFilters();
+      renderGrid();
+    })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
