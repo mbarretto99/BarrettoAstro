@@ -1,4 +1,4 @@
-/* Contact form → emails submissions to mark.barretto@mac.com via FormSubmit.co (AJAX).
+/* Contact form → emails submissions to the site owner via FormSubmit.co (AJAX).
    No backend needed; visitors stay on-site with a branded status message.
    First-ever submission triggers a one-time confirmation email from FormSubmit. */
 (function () {
@@ -54,11 +54,11 @@
         form.reset();
       } else {
         // Most likely the first-ever submission awaiting one-time activation.
-        setStatus(json.message || 'Sent. If this is the first message, FormSubmit sends a one-time confirmation to mark.barretto@mac.com — confirm it once and future messages arrive instantly.', 'success');
+        setStatus(json.message || 'Sent. If this is the first message, FormSubmit sends a one-time confirmation to my inbox — confirm it once and future messages arrive instantly.', 'success');
         form.reset();
       }
     } catch (err) {
-      setStatus('Sorry, sending failed. Please email mark.barretto@mac.com directly.', 'error');
+      setStatus('Sorry, sending failed. Please try again, or message me on Etsy.', 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = original;
