@@ -1,12 +1,13 @@
-/* Contact form → emails submissions to the site owner via FormSubmit.co (AJAX).
-   No backend needed; visitors stay on-site with a branded status message.
-   First-ever submission triggers a one-time confirmation email from FormSubmit. */
+/* Contact form → emails submissions to the site owner via Web3Forms (AJAX).
+   No backend needed. The access key is public by design and maps to the
+   owner's email server-side, so the address never appears in the page source. */
 (function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
   const status = document.getElementById('contactStatus');
   const submitBtn = document.getElementById('contactSubmit');
-  const ENDPOINT = 'https://formsubmit.co/ajax/mark.barretto@mac.com';
+  const ENDPOINT = 'https://api.web3forms.com/submit';
+  const ACCESS_KEY = 'cc94cd48-0c11-4154-ad90-470f6b1e6205';
 
   function setStatus(msg, kind) {
     status.textContent = msg;
@@ -38,24 +39,22 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
+          access_key: ACCESS_KEY,
           name: data.name,
-          email: data.email,            // becomes the "reply-to" for Mark
-          Topic: data.topic || '',
-          Message: data.message,
-          _subject: 'Barretto Astro — new contact form message',
-          _template: 'table',
-          _captcha: 'false'
+          email: data.email,            // becomes the reply-to address
+          topic: data.topic || '',
+          message: data.message,
+          subject: 'Barretto Astro — new contact form message',
+          from_name: 'Barretto Astro site'
         })
       });
       const json = await res.json().catch(() => ({}));
 
       if (res.ok && json.success) {
-        setStatus('Thanks — your message is on its way. Mark will be in touch shortly.', 'success');
+        setStatus('Thanks — your message is on its way. Expect a reply soon.', 'success');
         form.reset();
       } else {
-        // Most likely the first-ever submission awaiting one-time activation.
-        setStatus(json.message || 'Sent. If this is the first message, FormSubmit sends a one-time confirmation to my inbox — confirm it once and future messages arrive instantly.', 'success');
-        form.reset();
+        setStatus(json.message || 'Sorry, sending failed. Please try again, or message me on Etsy.', 'error');
       }
     } catch (err) {
       setStatus('Sorry, sending failed. Please try again, or message me on Etsy.', 'error');
