@@ -12,16 +12,16 @@
   --solar-gold:    #F5A623;
   --cosmic-blue:   #3099F3;
   --stellar-cyan:  #62E9FB;
-  --nebula-violet: #782FE0;
+  --nebula-violet: #7B2FE0;
   --stardust-grey: #676F7B;
   --comet-silver:  #A3A5AB;
   --tint-ice:      #E2F8FE;
-  --tint-mint:     #F2F8FF;
+  --tint-mint:     #F2FBFF;
 
   --bg:        var(--deep-space);
-  --text:      #E8EDF7;
-  --text-dim:  #9AA6BE;
-  --line:      rgba(154,166,190,.16);
+  --text:      #E2F8FE;
+  --text-dim:  #A3A5AB;
+  --line:      rgba(163,165,171,.16);
 
   --font: 'Calibri', 'Carlito', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
