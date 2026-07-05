@@ -1,0 +1,15 @@
+{
+  "name": "Barretto Astro",
+  "short_name": "Barretto Astro",
+  "description": "Precision-built 3D-printed astrophotography accessories. Designed under real skies for real astrophotographers.",
+  "start_url": "../",
+  "scope": "../",
+  "display": "standalone",
+  "background_color": "#080914",
+  "theme_color": "#080914",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
