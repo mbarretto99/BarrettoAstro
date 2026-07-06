@@ -2,7 +2,7 @@
 
 A standalone, animated showcase site for **Barretto Astro** (custom astrophotography accessories, Perth WA). Built with plain **HTML + CSS + JavaScript** — no build step, no dependencies. All product links point to the live [BarrettoAstro Etsy store](https://www.etsy.com/au/shop/BarrettoAstro).
 
-Design follows the official **Barretto Astro Brand Guidelines** (`../Visuals/BarrettoAstro_BrandGuideline_OnePage.pdf`): the official colour palette, Calibri typeface, logo-on-Deep-Space rule, and the `PRECISION · PASSION · DEEP SKY · ASTROPHOTOGRAPHY` pillars.
+Design follows the official **Barretto Astro Brand Guidelines** (`../Visuals/BarrettoAstro_BrandGuideline_OnePage.pdf`): the official colour palette, Calibri typeface, logo-on-Deep-Space rule, and the `PRECISION · PASSION · ASTROPHOTOGRAPHY` pillars.
 
 ---
 
